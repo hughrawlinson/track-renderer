@@ -1,0 +1,1 @@
+Render signals as SVGs. Just a demo site. Will extract a component later maybe.
