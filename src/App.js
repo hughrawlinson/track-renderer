@@ -59,7 +59,7 @@ function Line({signal}) {
 function App() {
   const [signals, updateSignal] = useState(null);
 
-  const features = ['rms', 'spectralCentroid', 'spectralFlatness'];
+  const features = ['rms', 'energy', 'zcr', 'spectralCentroid', 'spectralFlatness'];
 
   async function inputChangeHandler(event) {
     console.log(event.target.files[0]);
