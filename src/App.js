@@ -59,20 +59,31 @@ function Line({signal}) {
 function App() {
   const [signals, updateSignal] = useState(null);
 
+  const features = ['rms', 'spectralCentroid', 'spectralFlatness'];
+
   async function inputChangeHandler(event) {
     console.log(event.target.files[0]);
     const loudness = await extractFeature({
       audioBlob: event.target.files[0],
-      audioFeatures: ['rms', 'spectralCentroid', 'spectralFlatness'],
+      audioFeatures: features,
       extractionParams: {
         channels: [0]
       }
     });
-    const newSignals = loudness[0].reduce((acc, el) => ({
-      'rms': [...acc.rms, el.rms],
-      'spectralCentroid': [...acc.spectralCentroid, el.spectralCentroid],
-      'spectralFlatness': [...acc.spectralFlatness, el.spectralFlatness]
-    }), {rms:[], spectralCentroid:[], spectralFlatness:[]});
+
+
+
+    const newSignals = loudness[0].reduce((acc, el) =>
+    features.reduce((featuresAccumulator, featureName) => ({
+      ...featuresAccumulator,
+      [featureName]: [...acc[featureName], el[featureName]]
+    }), {}),
+      features.reduce((featuresAccumulator, featureName) => ({
+        ...featuresAccumulator,
+        [featureName]: []
+      }), {})
+    );
+
     console.log(newSignals);
     updateSignal(newSignals);
   }
