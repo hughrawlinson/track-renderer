@@ -67,7 +67,8 @@ function App() {
       audioBlob: event.target.files[0],
       audioFeatures: features,
       extractionParams: {
-        channels: [0]
+        channels: [0],
+        bufferSize: 2048
       }
     });
 
