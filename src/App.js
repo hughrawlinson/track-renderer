@@ -6,7 +6,7 @@ function normalize(array) {
   return array.map(val => val / maxVal);
 }
 
-function Line({signal}) {
+function Line({signal, label}) {
   const height = 150;
   let [zoom, setZoom] = useState(0);
 
@@ -47,6 +47,7 @@ function Line({signal}) {
           <stop offset="100%" stopColor="black" stopOpacity="0.2"></stop>
         </linearGradient>
       </defs>
+      <text x="10" y="20">{label}</text>
       <polyline
         points={points}
         fill="url(#Gradient1)"
@@ -96,7 +97,7 @@ function App() {
         <>
           <h1>Signal here!</h1>
           { Object.entries(signals).map(([feature, signal]) =>
-            <Line key={feature} style={{ maxWidth: "1vw" }} signal={signal} />)
+            <Line key={feature} label={feature} style={{ maxWidth: "1vw" }} signal={signal} />)
           }
         </>
       }
