@@ -60,7 +60,7 @@ function Line({signal, label}) {
 function App() {
   const [signals, updateSignal] = useState(null);
 
-  const features = ['rms', 'energy', 'zcr', 'spectralCentroid', 'spectralFlatness'];
+  const features = ['loudness'];
 
   async function inputChangeHandler(event) {
     console.log(event.target.files[0]);
@@ -73,9 +73,10 @@ function App() {
       }
     });
 
+    console.log(loudness[0]);
 
 
-    const newSignals = loudness[0].reduce((acc, el) =>
+    const newSignals = loudness[0].map(e => ({loudness: e.loudness.total})).reduce((acc, el) =>
     features.reduce((featuresAccumulator, featureName) => ({
       ...featuresAccumulator,
       [featureName]: [...acc[featureName], el[featureName]]
