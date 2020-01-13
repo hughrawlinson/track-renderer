@@ -1,0 +1,354 @@
+/*!***************************************!*\
+        !*** ./node_modules/assert/assert.js ***!
+        \***************************************/
+
+/*! no static exports found */
+
+/*! object-assign */
+
+/*!
+           * The buffer module from node.js, for the browser.
+           *
+           * @author   Feross Aboukhadijeh <feross@feross.org> <http://feross.org>
+           * @license  MIT
+           */
+
+/*! util/ */
+
+/*! ./../webpack/buildin/global.js */
+
+/*!***********************************!*\
+        !*** ./node_modules/dct/index.js ***!
+        \***********************************/
+
+/*! ./src/dct.js */
+
+/*!*************************************!*\
+        !*** ./node_modules/dct/src/dct.js ***!
+        \*************************************/
+
+/*!****************************************!*\
+        !*** ./node_modules/fftjs/dist/fft.js ***!
+        \****************************************/
+
+/*! ./utils */
+
+/*!******************************************!*\
+        !*** ./node_modules/fftjs/dist/utils.js ***!
+        \******************************************/
+
+/*!***********************************************************!*\
+        !*** ./node_modules/meyda/dist/node/extractors/chroma.js ***!
+        \***********************************************************/
+
+/*!***********************************************************!*\
+        !*** ./node_modules/meyda/dist/node/extractors/energy.js ***!
+        \***********************************************************/
+
+/*! assert */
+
+/*!***********************************************************************!*\
+        !*** ./node_modules/meyda/dist/node/extractors/extractorUtilities.js ***!
+        \***********************************************************************/
+
+/*!*************************************************************!*\
+        !*** ./node_modules/meyda/dist/node/extractors/loudness.js ***!
+        \*************************************************************/
+
+/*!*********************************************************!*\
+        !*** ./node_modules/meyda/dist/node/extractors/mfcc.js ***!
+        \*********************************************************/
+
+/*! ./powerSpectrum */
+
+/*! ./../utilities */
+
+/*! dct */
+
+/*!************************************************************************!*\
+        !*** ./node_modules/meyda/dist/node/extractors/perceptualSharpness.js ***!
+        \************************************************************************/
+
+/*! ./loudness */
+
+/*!*********************************************************************!*\
+        !*** ./node_modules/meyda/dist/node/extractors/perceptualSpread.js ***!
+        \*********************************************************************/
+
+/*!******************************************************************!*\
+        !*** ./node_modules/meyda/dist/node/extractors/powerSpectrum.js ***!
+        \******************************************************************/
+
+/*!********************************************************!*\
+        !*** ./node_modules/meyda/dist/node/extractors/rms.js ***!
+        \********************************************************/
+
+/*!*********************************************************************!*\
+        !*** ./node_modules/meyda/dist/node/extractors/spectralCentroid.js ***!
+        \*********************************************************************/
+
+/*! ./extractorUtilities */
+
+/*!*********************************************************************!*\
+        !*** ./node_modules/meyda/dist/node/extractors/spectralFlatness.js ***!
+        \*********************************************************************/
+
+/*!*****************************************************************!*\
+        !*** ./node_modules/meyda/dist/node/extractors/spectralFlux.js ***!
+        \*****************************************************************/
+
+/*!*********************************************************************!*\
+        !*** ./node_modules/meyda/dist/node/extractors/spectralKurtosis.js ***!
+        \*********************************************************************/
+
+/*!********************************************************************!*\
+        !*** ./node_modules/meyda/dist/node/extractors/spectralRolloff.js ***!
+        \********************************************************************/
+
+/*!*********************************************************************!*\
+        !*** ./node_modules/meyda/dist/node/extractors/spectralSkewness.js ***!
+        \*********************************************************************/
+
+/*!******************************************************************!*\
+        !*** ./node_modules/meyda/dist/node/extractors/spectralSlope.js ***!
+        \******************************************************************/
+
+/*!*******************************************************************!*\
+        !*** ./node_modules/meyda/dist/node/extractors/spectralSpread.js ***!
+        \*******************************************************************/
+
+/*!********************************************************!*\
+        !*** ./node_modules/meyda/dist/node/extractors/zcr.js ***!
+        \********************************************************/
+
+/*!***********************************************************!*\
+        !*** ./node_modules/meyda/dist/node/featureExtractors.js ***!
+        \***********************************************************/
+
+/*! ./extractors/rms */
+
+/*! ./extractors/energy */
+
+/*! ./extractors/spectralSlope */
+
+/*! ./extractors/spectralCentroid */
+
+/*! ./extractors/spectralRolloff */
+
+/*! ./extractors/spectralFlatness */
+
+/*! ./extractors/spectralSpread */
+
+/*! ./extractors/spectralSkewness */
+
+/*! ./extractors/spectralKurtosis */
+
+/*! ./extractors/zcr */
+
+/*! ./extractors/loudness */
+
+/*! ./extractors/perceptualSpread */
+
+/*! ./extractors/perceptualSharpness */
+
+/*! ./extractors/mfcc */
+
+/*! ./extractors/chroma */
+
+/*! ./extractors/powerSpectrum */
+
+/*! ./extractors/spectralFlux */
+
+/*!**********************************************!*\
+        !*** ./node_modules/meyda/dist/node/main.js ***!
+        \**********************************************/
+
+/*! ./utilities */
+
+/*! ./featureExtractors */
+
+/*! fftjs */
+
+/*! ./meyda-wa */
+
+/*!**************************************************!*\
+        !*** ./node_modules/meyda/dist/node/meyda-wa.js ***!
+        \**************************************************/
+
+/*!***************************************************!*\
+        !*** ./node_modules/meyda/dist/node/utilities.js ***!
+        \***************************************************/
+
+/*! ./windowing */
+
+/*!***************************************************!*\
+        !*** ./node_modules/meyda/dist/node/windowing.js ***!
+        \***************************************************/
+
+/*!*****************************************************!*\
+        !*** ./node_modules/meyda/src/extractors/chroma.js ***!
+        \*****************************************************/
+
+/*! exports provided: default */
+
+/*!*****************************************************!*\
+        !*** ./node_modules/meyda/src/extractors/energy.js ***!
+        \*****************************************************/
+
+/*!*****************************************************************!*\
+        !*** ./node_modules/meyda/src/extractors/extractorUtilities.js ***!
+        \*****************************************************************/
+
+/*! exports provided: mu */
+
+/*!*******************************************************!*\
+        !*** ./node_modules/meyda/src/extractors/loudness.js ***!
+        \*******************************************************/
+
+/*!***************************************************!*\
+        !*** ./node_modules/meyda/src/extractors/mfcc.js ***!
+        \***************************************************/
+
+/*!******************************************************************!*\
+        !*** ./node_modules/meyda/src/extractors/perceptualSharpness.js ***!
+        \******************************************************************/
+
+/*!***************************************************************!*\
+        !*** ./node_modules/meyda/src/extractors/perceptualSpread.js ***!
+        \***************************************************************/
+
+/*!************************************************************!*\
+        !*** ./node_modules/meyda/src/extractors/powerSpectrum.js ***!
+        \************************************************************/
+
+/*!**************************************************!*\
+        !*** ./node_modules/meyda/src/extractors/rms.js ***!
+        \**************************************************/
+
+/*!***************************************************************!*\
+        !*** ./node_modules/meyda/src/extractors/spectralCentroid.js ***!
+        \***************************************************************/
+
+/*!***************************************************************!*\
+        !*** ./node_modules/meyda/src/extractors/spectralFlatness.js ***!
+        \***************************************************************/
+
+/*!***********************************************************!*\
+        !*** ./node_modules/meyda/src/extractors/spectralFlux.js ***!
+        \***********************************************************/
+
+/*!***************************************************************!*\
+        !*** ./node_modules/meyda/src/extractors/spectralKurtosis.js ***!
+        \***************************************************************/
+
+/*!**************************************************************!*\
+        !*** ./node_modules/meyda/src/extractors/spectralRolloff.js ***!
+        \**************************************************************/
+
+/*!***************************************************************!*\
+        !*** ./node_modules/meyda/src/extractors/spectralSkewness.js ***!
+        \***************************************************************/
+
+/*!************************************************************!*\
+        !*** ./node_modules/meyda/src/extractors/spectralSlope.js ***!
+        \************************************************************/
+
+/*!*************************************************************!*\
+        !*** ./node_modules/meyda/src/extractors/spectralSpread.js ***!
+        \*************************************************************/
+
+/*!**************************************************!*\
+        !*** ./node_modules/meyda/src/extractors/zcr.js ***!
+        \**************************************************/
+
+/*!*****************************************************!*\
+        !*** ./node_modules/meyda/src/featureExtractors.js ***!
+        \*****************************************************/
+
+/*! exports provided: buffer, rms, energy, complexSpectrum, spectralSlope, spectralCentroid, spectralRolloff, spectralFlatness, spectralSpread, spectralSkewness, spectralKurtosis, amplitudeSpectrum, zcr, loudness, perceptualSpread, perceptualSharpness, powerSpectrum, mfcc, chroma, spectralFlux */
+
+/*!*********************************************!*\
+        !*** ./node_modules/meyda/src/utilities.js ***!
+        \*********************************************/
+
+/*! exports provided: isPowerOfTwo, error, pointwiseBufferMult, applyWindow, createBarkScale, typedToArray, arrayToTyped, _normalize, normalize, normalizeToOne, mean, melToFreq, freqToMel, createMelFilterBank, hzToOctaves, normalizeByColumn, createChromaFilterBank, frame */
+
+/*!*********************************************!*\
+        !*** ./node_modules/meyda/src/windowing.js ***!
+        \*********************************************/
+
+/*! exports provided: blackman, sine, hanning, hamming */
+
+/*!*********************************************!*\
+        !*** ./node_modules/object-assign/index.js ***!
+        \*********************************************/
+
+/*
+        object-assign
+        (c) Sindre Sorhus
+        @license MIT
+        */
+
+/*!*****************************************!*\
+        !*** ./node_modules/process/browser.js ***!
+        \*****************************************/
+
+/*!*************************************************************!*\
+        !*** ./node_modules/util/node_modules/inherits/inherits.js ***!
+        \*************************************************************/
+
+/*! util */
+
+/*! ./inherits_browser.js */
+
+/*!*********************************************************************!*\
+        !*** ./node_modules/util/node_modules/inherits/inherits_browser.js ***!
+        \*********************************************************************/
+
+/*!******************************************************!*\
+        !*** ./node_modules/util/support/isBufferBrowser.js ***!
+        \******************************************************/
+
+/*!***********************************!*\
+        !*** ./node_modules/util/util.js ***!
+        \***********************************/
+
+/*! ./support/isBuffer */
+
+/*! inherits */
+
+/*! ./../process/browser.js */
+
+/*!***********************************!*\
+        !*** (webpack)/buildin/global.js ***!
+        \***********************************/
+
+/*!**************************************************************************************************************!*\
+        !*** ./node_modules/worker-loader/dist/cjs.js?fallback=true&inline!./src/worker/feature-extractor.worker.ts ***!
+        \**************************************************************************************************************/
+
+/*! !./node_modules/worker-loader/dist/workers/InlineWorker.js */
+
+/*!*****************************************************************!*\
+        !*** ./node_modules/worker-loader/dist/workers/InlineWorker.js ***!
+        \*****************************************************************/
+
+/*!***************************************!*\
+        !*** ./src/main/feature-extractor.ts ***!
+        \***************************************/
+
+/*! exports provided: extractFeatures */
+
+/*! meyda */
+
+/*!***************************!*\
+        !*** ./src/main/index.ts ***!
+        \***************************/
+
+/*! exports provided: availableFeatureExtractors, extractFeature, extractFeatureMainThread */
+
+/*! worker-loader?fallback=true&inline!../worker/feature-extractor.worker.ts */
+
+/*! ./feature-extractor */
+
+/*! meyda/src/featureExtractors */

@@ -4,22 +4,6 @@ object-assign
 @license MIT
 */
 
-/*!*****************************************************************!*\
-        !*** ./node_modules/worker-loader/dist/workers/InlineWorker.js ***!
-        \*****************************************************************/
-
-/*! no static exports found */
-
-/*!*****************************************!*\
-        !*** ./src/feature-extractor.worker.js ***!
-        \*****************************************/
-
-/*!**********************!*\
-        !*** ./src/index.js ***!
-        \**********************/
-
-/*! exports provided: extractFeature */
-
 /** @license React v16.12.0
  * react.production.min.js
  *
