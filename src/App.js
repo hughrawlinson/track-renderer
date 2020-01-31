@@ -1,11 +1,16 @@
 import React, {useRef, useEffect, useState} from 'react';
-import {extractFeature} from 'feature-extractor-worker';
+import { extractFeature } from 'feature-extractor-worker';
 
 function normalize(array) {
   const maxVal = Math.max.apply(null,array);
   return array.map(val => val / maxVal);
 }
 
+/**
+ * Render a signal in a zoomable SVG
+ * @param options.signal An ArrayLike of numbers
+ * @param options.label A string to be shown as a label of the signal
+ */
 function Line({signal, label}) {
   const height = 150;
   let [zoom, setZoom] = useState(0);
@@ -73,10 +78,7 @@ function App() {
       }
     });
 
-    console.log(loudness[0]);
-
-
-    const newSignals = loudness[0].map(e => ({loudness: e.loudness.total})).reduce((acc, el) =>
+    const newSignals = loudness[0].reduce((acc, el) =>
     features.reduce((featuresAccumulator, featureName) => ({
       ...featuresAccumulator,
       [featureName]: [...acc[featureName], el[featureName]]
