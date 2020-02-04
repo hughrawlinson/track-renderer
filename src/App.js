@@ -1,5 +1,5 @@
 import React, {useRef, useEffect, useState} from 'react';
-import { extractFeature } from 'feature-extractor-worker';
+import {extractFeature, availableFeatureExtractors} from 'feature-extractor-worker';
 
 function normalize(array) {
   const maxVal = Math.max.apply(null,array);
@@ -64,14 +64,14 @@ function Line({signal, label}) {
 
 function App() {
   const [signals, updateSignal] = useState(null);
-
-  const features = ['loudness'];
+  const [featureInSelector, updateFeatureInSelector] = useState('loudness');
+  const selectedFeatures = [featureInSelector];
 
   async function inputChangeHandler(event) {
     console.log(event.target.files[0]);
     const loudness = await extractFeature({
       audioBlob: event.target.files[0],
-      audioFeatures: features,
+      audioFeatures: selectedFeatures,
       extractionParams: {
         channels: [0],
         bufferSize: 2048
@@ -79,23 +79,27 @@ function App() {
     });
 
     const newSignals = loudness[0].reduce((acc, el) =>
-    features.reduce((featuresAccumulator, featureName) => ({
+    selectedFeatures.reduce((featuresAccumulator, featureName) => ({
       ...featuresAccumulator,
       [featureName]: [...acc[featureName], el[featureName]]
     }), {}),
-      features.reduce((featuresAccumulator, featureName) => ({
+      selectedFeatures.reduce((featuresAccumulator, featureName) => ({
         ...featuresAccumulator,
         [featureName]: []
       }), {})
     );
 
-    console.log(newSignals);
     updateSignal(newSignals);
   }
 
   return (
     <div className="App">
       <input onChange={inputChangeHandler} type='file' accept='audio/*' />
+      <select value={featureInSelector} onChange={event => updateFeatureInSelector(event.target.value)}>
+        {
+          availableFeatureExtractors.map(feature => (<option key={feature} value={feature}>{feature}</option>))
+        }
+      </select>
       { signals &&
         <>
           <h1>Signal here!</h1>
