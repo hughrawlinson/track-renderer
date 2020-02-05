@@ -129,7 +129,10 @@ function App() {
         <>
           <h1>Signal here!</h1>
           { Object.entries(signals).map(([feature, signal]) =>
-            <Line key={feature} label={feature} style={{ maxWidth: "1vw" }} signal={signal} />)
+            <>
+              <h4>{feature}</h4>
+              <Line key={feature} label={feature} style={{ maxWidth: "1vw" }} signal={signal} />
+            </>)
           }
         </>
       }
