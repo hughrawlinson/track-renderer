@@ -19,6 +19,8 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: npm install, deploy
       run: |
+        git config user.name $(jq .pusher.username $GITHUB_PAYLOAD)
+        git config user.email $(jq .pusher.email $GITHUB_PAYLOAD)
         git remote add push "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/hughrawlinson/track-renderer"
         npm ci
         npm run deploy -o push
