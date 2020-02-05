@@ -1,7 +1,7 @@
 import React, {useRef, useEffect, useState, ChangeEvent } from 'react';
 import { MeydaAudioFeature, MeydaFeaturesObject } from 'meyda';
 import CSS from 'csstype';
-import { extractFeature } from 'feature-extractor-worker';
+import { extractFeature, availableFeatureExtractors } from 'feature-extractor-worker';
 
 function normalize(array: number[]) {
   const maxVal = Math.max.apply(null,array);
@@ -73,14 +73,15 @@ function App() {
   type SignalsType = Map<MeydaAudioFeature, number[]>;
   const [signals, updateSignal] = useState(null as SignalsType | null);
 
-  const features = ['loudness' as MeydaAudioFeature];
+  const [featureInSelector, updateFeatureInSelector] = useState('loudness' as MeydaAudioFeature);
+  const selectedFeatures: MeydaAudioFeature[] = [featureInSelector];
 
   async function inputChangeHandler(event: ChangeEvent<HTMLInputElement>) {
     const file = event.target.files?.[0];
     if (file) {
       const loudness: (Partial<MeydaFeaturesObject> | null)[][] = await extractFeature({
         audioBlob: file,
-        audioFeatures: features,
+        audioFeatures: selectedFeatures,
         extractionParams: {
           channels: [0],
           bufferSize: 2048,
@@ -125,6 +126,11 @@ function App() {
   return (
     <div className="App">
       <input onChange={inputChangeHandler} type='file' accept='audio/*' />
+      <select value={featureInSelector} onChange={event => updateFeatureInSelector(event.target.value as MeydaAudioFeature)}>
+        {
+          availableFeatureExtractors.map(feature => (<option key={feature} value={feature}>{feature}</option>))
+        }
+      </select>
       { signals &&
         <>
           <h1>Signal here!</h1>
