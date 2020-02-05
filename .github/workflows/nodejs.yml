@@ -1,4 +1,4 @@
-name: Node CI
+name: Publish
 
 on: [push]
 
@@ -21,8 +21,8 @@ jobs:
       run: |
         git config user.name "Hugh Rawlinson"
         git config user.email "hughr2005@gmail.com"
-        git remote add push "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/hughrawlinson/track-renderer"
+        git remote add pages "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/hughrawlinson/track-renderer.git"
         npm ci
-        npm run deploy -o push
+        npm run deploy -- -o pages
       env:
         CI: true
