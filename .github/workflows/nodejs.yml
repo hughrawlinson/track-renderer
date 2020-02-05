@@ -19,16 +19,7 @@ jobs:
         node-version: ${{ matrix.node-version }}
     - name: npm install, deploy
       run: |
-        git remote add push "https://
-      -
-        name: Deploy
-        if: success()
-        uses: crazy-max/ghaction-github-pages@v1
-        with:
-          target_branch: gh-pages
-          build_dir: public
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}@github.com/hughrawlinson/track-renderer"
+        git remote add push "https://${{ secrets.GITHUB_TOKEN }}@github.com/hughrawlinson/track-renderer"
         npm ci
         npm run deploy -o push
       env:
