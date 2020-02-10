@@ -2,6 +2,7 @@ import React, {useRef, useEffect, useState, ChangeEvent } from 'react';
 import { MeydaAudioFeature, MeydaFeaturesObject } from 'meyda';
 import CSS from 'csstype';
 import { extractFeature } from 'feature-extractor-worker';
+import RepeatComponent from './components/RepeatComponent';
 
 function normalize(array: number[]) {
   const maxVal = Math.max.apply(null,array);
@@ -136,6 +137,9 @@ function App() {
           }
         </>
       }
+      <RepeatComponent controllable initialN={1}>
+        <h5>Worked!</h5>
+      </RepeatComponent>
     </div>
   );
 }
