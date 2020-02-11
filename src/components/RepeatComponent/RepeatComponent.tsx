@@ -1,9 +1,15 @@
-import React, {useState}  from 'react';
+import React, {useState, ReactNode}  from 'react';
 
-function RepeatComponent({children, initialN, controllable}) {
+type RepeatComponentPropTypes = {
+  children: ReactNode,
+  initialN: number,
+  controllable: boolean
+}
+
+function RepeatComponent({children, initialN, controllable}: RepeatComponentPropTypes) {
   const [n, setN] = useState(initialN);
 
-  function handleClick(adjustment) {
+  function handleClick(adjustment: number) {
     if (controllable) {
       setN(n+adjustment);
     }
