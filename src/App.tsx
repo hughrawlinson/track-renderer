@@ -1,14 +1,12 @@
 import React, { useState, ChangeEvent } from 'react';
 import { MeydaAudioFeature } from 'meyda';
+import { from } from 'rxjs';
+import { map, first, concatAll } from 'rxjs/operators';
 import RepeatComponent from './components/RepeatComponent';
 import Line from './components/Line';
 import { getFileFromEvent } from './lib/getFileFromEvent';
 import { getFeaturesFromFile } from './lib/getFeaturesFromFile';
 import { getObjectWithArraysPerFeature } from './lib/getObjectWithArraysPerFeature';
-
-function first(a: Array<any>) {
-  return a[0];
-}
 
 const EXTRACTION_PARAMETERS = {
   channels: [0],
@@ -17,10 +15,18 @@ const EXTRACTION_PARAMETERS = {
 }
 
 async function getFormattedFeaturesFromEvent(event: ChangeEvent<HTMLInputElement>, features: MeydaAudioFeature[]) {
-  return getFileFromEvent(event)
-      .then(file => getFeaturesFromFile(file, features, EXTRACTION_PARAMETERS))
-      .then(first)
-      .then(getObjectWithArraysPerFeature);
+  from(getFileFromEvent(event))
+    .pipe(
+      map(file => getFeaturesFromFile(file, features, EXTRACTION_PARAMETERS)),
+      concatAll()
+    )
+    .pipe(first())
+    .pipe(map(getObjectWithArraysPerFeature))
+
+  // return getFileFromEvent(event)
+  //     .then(file => getFeaturesFromFile(file, features, EXTRACTION_PARAMETERS))
+  //     .then(first)
+  //     .then(getObjectWithArraysPerFeature);
 }
 
 function App() {
