@@ -1,5 +1,5 @@
 import React, { useState, ChangeEvent } from 'react';
-import { MeydaAudioFeature, MeydaFeaturesObject } from 'meyda';
+import { MeydaAudioFeature } from 'meyda';
 import { from } from 'rxjs';
 import { flatMap, map, filter, tap, scan } from 'rxjs/operators';
 import RepeatComponent from './components/RepeatComponent';
@@ -28,14 +28,6 @@ function getFormattedFeaturesFromEvent(event: ChangeEvent<HTMLInputElement>, fea
         [intel]: [...acc[intel], ...el[intel]]
       }), {})
     }))
-    // .pipe(mergeScan((acc, el) => {
-    //    Object.keys(acc).map(key =)
-    // }))
-
-  // return getFileFromEvent(event)
-  //     .then(file => getFeaturesFromFile(file, features, EXTRACTION_PARAMETERS))
-  //     .then(first)
-  //     .then(getObjectWithArraysPerFeature);
 }
 
 function App() {
