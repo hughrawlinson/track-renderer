@@ -1,7 +1,7 @@
 import React, { useState, ChangeEvent } from 'react';
-import { MeydaAudioFeature } from 'meyda';
+import { MeydaAudioFeature, MeydaFeaturesObject } from 'meyda';
 import { from } from 'rxjs';
-import { map, first, concatAll } from 'rxjs/operators';
+import { flatMap, map, filter, tap, scan } from 'rxjs/operators';
 import RepeatComponent from './components/RepeatComponent';
 import Line from './components/Line';
 import { getFileFromEvent } from './lib/getFileFromEvent';
@@ -14,14 +14,23 @@ const EXTRACTION_PARAMETERS = {
   hopSize: 0,
 }
 
-async function getFormattedFeaturesFromEvent(event: ChangeEvent<HTMLInputElement>, features: MeydaAudioFeature[]) {
-  from(getFileFromEvent(event))
+function getFormattedFeaturesFromEvent(event: ChangeEvent<HTMLInputElement>, features: MeydaAudioFeature[]) {
+  return from(getFileFromEvent(event))
     .pipe(
-      map(file => getFeaturesFromFile(file, features, EXTRACTION_PARAMETERS)),
-      concatAll()
+      flatMap(file => getFeaturesFromFile(file, features, EXTRACTION_PARAMETERS))
     )
-    .pipe(first())
+    .pipe(tap(console.log))
+    .pipe(filter(x => !!x))
     .pipe(map(getObjectWithArraysPerFeature))
+    .pipe(scan((acc, el) => {
+      return Object.keys(acc).reduce((intacc, intel) => ({
+        ...intacc,
+        [intel]: [...acc[intel], ...el[intel]]
+      }), {})
+    }))
+    // .pipe(mergeScan((acc, el) => {
+    //    Object.keys(acc).map(key =)
+    // }))
 
   // return getFileFromEvent(event)
   //     .then(file => getFeaturesFromFile(file, features, EXTRACTION_PARAMETERS))
@@ -37,7 +46,7 @@ function App() {
 
   async function inputChangeHandler(event: ChangeEvent<HTMLInputElement>) {
     getFormattedFeaturesFromEvent(event, features)
-      .then(newSignals => {
+      .subscribe(newSignals => {
         updateSignal(() => newSignals as unknown as SignalsType);
       });
   }
