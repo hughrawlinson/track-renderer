@@ -5,7 +5,7 @@
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
-    "@testing-library/user-event": "^7.2.1",
+    "@testing-library/user-event": "^10.0.0",
     "@types/meyda": "^4.3.0",
     "csstype": "^2.6.8",
     "feature-extractor-worker": "0.0.1-alpha.8",
