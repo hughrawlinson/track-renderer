@@ -43,6 +43,6 @@
   "homepage": "https://hughrawlinson.github.io/track-renderer",
   "devDependencies": {
     "gh-pages": "^3.0.0",
-    "typescript": "^3.9.3"
+    "typescript": "^3.9.5"
   }
 }
