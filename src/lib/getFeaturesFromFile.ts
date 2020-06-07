@@ -1,9 +1,9 @@
 import { MeydaAudioFeature } from "meyda";
-import { extractFeature } from 'feature-extractor-worker';
+import { extractFeatureObservable } from 'feature-extractor-worker/dist/main/';
 import { ExtractionParams } from 'feature-extractor-worker/dist/main/feature-extractor';
 
-export async function getFeaturesFromFile(file: Blob, features: MeydaAudioFeature[], extractionParams: ExtractionParams) {
-  return await extractFeature({
+export function getFeaturesFromFile(file: Blob, features: MeydaAudioFeature[], extractionParams: ExtractionParams) {
+  return extractFeatureObservable({
     audioBlob: file,
     audioFeatures: features,
     extractionParams,
