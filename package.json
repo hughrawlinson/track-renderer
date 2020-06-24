@@ -7,7 +7,7 @@
     "@testing-library/react": "^10.3.0",
     "@testing-library/user-event": "^12.0.7",
     "@types/meyda": "^4.3.1",
-    "@types/react": "^16.9.38",
+    "@types/react": "^16.9.41",
     "csstype": "^2.6.10",
     "feature-extractor-worker": "0.0.1-alpha.8",
     "react": "^16.13.1",
