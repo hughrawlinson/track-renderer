@@ -12,7 +12,7 @@
     "feature-extractor-worker": "0.0.1-alpha.8",
     "react": "^16.13.1",
     "react-dom": "^16.12.0",
-    "react-scripts": "3.4.1"
+    "react-scripts": "3.4.3"
   },
   "scripts": {
     "start": "react-scripts start",
