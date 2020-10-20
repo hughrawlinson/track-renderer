@@ -11,7 +11,7 @@
     "csstype": "^3.0.3",
     "feature-extractor-worker": "0.0.1-alpha.8",
     "react": "^16.14.0",
-    "react-dom": "^16.12.0",
+    "react-dom": "^16.14.0",
     "react-scripts": "3.4.3"
   },
   "scripts": {
