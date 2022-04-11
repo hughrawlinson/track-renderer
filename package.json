@@ -6,7 +6,7 @@
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^14.1.0",
-    "@types/react": "^17.0.43",
+    "@types/react": "^18.0.1",
     "csstype": "^3.0.11",
     "feature-extractor-worker": "0.0.1-alpha.8",
     "meyda": "^6.0.0-beta.2",
